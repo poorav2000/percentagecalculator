@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html :lang="eng">
+<head>
+    <title>DRDO</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="indexdesign.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Percentage Calculator</h1>
+                <p>Enter Your Marks and Get you Percentage with Grade</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-12 text-center">
+            <forms>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="sub1" aria-describedby="emailHelp" placeholder="Enter Marks in Subject 1">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control" id="sub2" aria-describedby="emailHelp" placeholder="Enter Marks in Subject 2">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control" id="sub3" aria-describedby="emailHelp" placeholder="Enter Marks in Subject 3">
+                </div>  
+
+                <div class="form-group">
+                    <input type="number" class="form-control" id="sub4" aria-describedby="emailHelp" placeholder="Enter Marks in Subject 4">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control" id="sub5" aria-describedby="emailHelp" placeholder="Enter Marks in Subject 5">
+                </div>
+                
+               <input type="button" name="" value="ShowPercentage" class="form-button" onclick="calcy()">
+            
+            </form>
+              
+        </div>
+
+        
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p id="showdata"> </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        alert("Welcome, Enter Your Marks and Get Your Percentage and Grade")
+
+        const calcy = () =>{
+            let sub1 = document.getElementById('sub1').value;
+            let sub2 = document.getElementById('sub2').value;
+            let sub3 = document.getElementById('sub3').value;
+            let sub4 = document.getElementById('sub4').value;
+            let sub5 = document.getElementById('sub5').value;
+            let grades="";
+
+            let totalgrade = parseFloat(sub1) + parseFloat(sub2) + parseFloat(sub3) + parseFloat(sub4) + parseFloat(sub5);
+            
+            let perc = (totalgrade/500) * 100;
+
+            if(perc <= 100 && perc >=80)
+            {
+                grades = 'A';
+            }else if(perc <= 79 && perc >= 60){
+                grades = 'B'
+            }else if(perc <= 59 && perc >=50){
+                grades = 'c'
+            }else if(perc <= 49 && perc >=33){
+                grades = 'D'
+            }else{
+                grades = 'F'
+            }
+
+            if(perc > 33){
+                document.getElementById('showdata').innerHTML = `CONGRATS, YOU ARE PASSED <br> You Got ${perc}% and your Grade is ${grades}`
+            }
+            else{
+                document.getElementById('showdata').innerHTML = `Sorry, YOU ARE FAIL <br> You Got ${perc}% and your Grade is ${grades}`
+            }
+            
+        }
+
+
+
+
+    </script>
+</body>
